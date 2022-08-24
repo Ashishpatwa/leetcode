@@ -1,22 +1,16 @@
-class Solution(object):
-    def isHappy(self, n):
-        """
-        :type n: int
-        :rtype: bool
-        """
-        sm=0
-        st= set()
-        while True:
+class Solution:
+    def isHappy(self, n: int) -> bool:
+        s=set()
+        while n!=1:
+            s.add(n)
+            sum=0
             while n:
                 z=n%10
-                sm+=(z*z)
-                n=n//10
-            if sm==1:
-                return True
-            elif sm in st:
+                sum+=(z*z)
+                n//=10
+            n=sum
+            if n in s:
                 return False
-            else:
-                n=sm
-                st.add(sm)
-                sm=0
+        return True
+                
         
