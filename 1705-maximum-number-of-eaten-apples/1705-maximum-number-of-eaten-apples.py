@@ -5,10 +5,10 @@ class Solution:
         heap=[]
         i=0
         while i<len(apples) or heap:
-            if i<len(apples) and apples[i]!=0:
+            if i<len(apples):
                 heapq.heappush(heap,[days[i]+i+1, apples[i]])
           
-            while heap and (curr_day>=heap[0][0]) :
+            while heap and (heap[0][1]==0 or curr_day>=heap[0][0]) :
                 heapq.heappop(heap)
             if heap:
                 curr = heap[0]
