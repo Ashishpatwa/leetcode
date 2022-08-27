@@ -9,7 +9,7 @@ class Solution:
         sum=0
         while n:
             k=n%10
-            sum+=8**k
+            sum+=2**k
             n//=10
         return sum
             
