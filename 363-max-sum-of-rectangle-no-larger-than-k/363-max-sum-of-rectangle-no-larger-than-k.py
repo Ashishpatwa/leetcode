@@ -12,10 +12,7 @@ class Solution:
                     cs+=i
                     currmax = bisect_left(st,cs-k)
                     if currmax<len(st):
-                        if st[currmax]==cs-k:
-                            return k
-                        else:
-                            mx=max(mx,cs-st[currmax])
+                        mx=max(mx,cs-st[currmax])
                     insort(st, cs)
                     
         return mx
