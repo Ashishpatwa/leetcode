@@ -1,10 +1,15 @@
 class Solution:
     def numTilings(self, n: int) -> int:
-        dp=[0]*(n+3)
-        dp[1]=1
-        dp[2]=2
-        dp[3]=5
-        for i in range(4,n+1):
-            dp[i]=int((2*dp[i-1]+dp[i-3])%(1e9+7))
-        return dp[n]
-        
+        dp=[-1]*(n+3)
+        return self.f(n,dp)
+    def f(self,n,dp):
+        if n==1:
+            return 1
+        if n==2:
+            return 2
+        if n==3:
+            return 5
+        if dp[n]!=-1:
+            return dp[n]
+        dp[n]=2*self.f(n-1,dp)+self.f(n-3,dp)
+        return dp[n]%1000000007
