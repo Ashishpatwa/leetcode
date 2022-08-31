@@ -8,15 +8,15 @@ class Solution(object):
         bull=0
         cows=0
         s=Counter(secret)
-        visited=[False]*len(secret)
+        visited=set()
      
         for i in range(len(secret)):
             if secret[i]==guess[i]:
                 bull+=1
                 s[guess[i]]-=1
-                visited[i]=True
+                visited.add(i)
         for i in range(len(secret)):
-            if guess[i] in s and s[guess[i]]>0 and visited[i]==False:
+            if i not in visited and guess[i] in s and s[guess[i]]>0:
                 s[guess[i]]-=1
                 cows+=1
         return str(bull)+"A"+str(cows)+"B"
