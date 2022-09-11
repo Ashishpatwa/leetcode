@@ -31,13 +31,12 @@ class Solution(object):
                 if rt.right:
                     queue.append([rt.right,ind+1])
                 if ind in tmp_dict:
-                    tmp_dict[ind].append(rt.val)
+                    insort(tmp_dict[ind],rt.val)
                 else:
                     tmp_dict[ind]=[rt.val]
             
             for i in tmp_dict:
                 if i in dic:
-                    #print(tmp_dict[i])
                     for j in sorted(tmp_dict[i]):
                         dic[i].append(j)
                 else:
