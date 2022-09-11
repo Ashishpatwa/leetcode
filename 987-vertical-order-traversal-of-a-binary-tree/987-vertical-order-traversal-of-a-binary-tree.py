@@ -37,10 +37,10 @@ class Solution(object):
             
             for i in tmp_dict:
                 if i in dic:
-                    for j in sorted(tmp_dict[i]):
+                    for j in tmp_dict[i]:
                         dic[i].append(j)
                 else:
-                    dic[i]=sorted(tmp_dict[i])
+                    dic[i]=tmp_dict[i]
                 
                     
         
