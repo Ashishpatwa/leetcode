@@ -8,7 +8,7 @@ class Solution:
         i=0
         while i<len(s)-c+1:
             flag=1
-            freqs=copy.deepcopy(freq)
+            freqs=freq.copy()
             j=i
             while j<i+c:
                 k=s[j:j+len(words[0])]
