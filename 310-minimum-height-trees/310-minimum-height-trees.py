@@ -16,9 +16,7 @@ class Solution:
                 queue.append(i)
         count=0
         ans=[]
-        while queue:
-            if len(queue)<3 and n-count<3:
-                return queue
+        while n-count>2:
             ln=len(queue)
             for i in range(ln):
                 count+=1
@@ -27,7 +25,7 @@ class Solution:
                     indegree[i]-=1
                     if indegree[i]==1:
                         queue.append(i)
-        return []
+        return queue
             
                     
                 
